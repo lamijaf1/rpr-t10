@@ -5,12 +5,17 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.util.ResourceBundle;
+
 public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
         GeografijaDAO model = GeografijaDAO.getInstance();
         //model.napuni();
+        ResourceBundle bundle = ResourceBundle.getBundle("Translation");
+        FXMLLoader loader = new FXMLLoader( getClass().getResource(
+                "/biblioteka.fxml" ), bundle);
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("sample.fxml"));
         loader.setController(new GeografijaDAO(model));
