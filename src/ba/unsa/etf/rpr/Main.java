@@ -18,7 +18,7 @@ public class Main extends Application {
         }
         return s;
     }
-    public static void glavniGrad(){
+    public  void glavniGrad(){
         System.out.println("Unesite naziv drzave: ");
         Scanner ulaz = new Scanner(System.in);
         GeografijaDAO dao = GeografijaDAO.getInstance();
