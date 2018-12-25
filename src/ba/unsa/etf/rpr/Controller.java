@@ -5,6 +5,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.TextField;
+import net.sf.jasperreports.engine.JRException;
 
 
 public class Controller {
@@ -37,7 +38,11 @@ public class Controller {
     }
 
     public void stampaj(ActionEvent actionEvent) {
-
+        try {
+            new GradoviReport().showReport(GeografijaDAO.getInstance().getConn());
+        } catch (JRException e1) {
+            e1.printStackTrace();
+        }
     }
 
     public void glavniGrad(ActionEvent actionEvent) {

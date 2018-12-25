@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 
+import static javafx.scene.control.PopupControl.USE_COMPUTED_SIZE;
+
 public class Main extends Application {
     public  String ispisiGradove(){
         ArrayList<Grad> gradovi = GeografijaDAO.getInstance().gradovi();
@@ -30,13 +32,12 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         GeografijaDAO model = GeografijaDAO.getInstance();
-        //model.napuni();
         ResourceBundle bundle = ResourceBundle.getBundle("Translation");
-        FXMLLoader loader = new FXMLLoader( getClass().getResource("/sample.fxml" ), bundle);
-        loader.setController(new GeografijaDAO(model));
+        FXMLLoader loader = new FXMLLoader( getClass().getResource("sample.fxml" ), bundle);
+      //  loader.setController(new GeografijaDAO(model));
         Parent root = loader.load();
         primaryStage.setTitle("Geografija");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
         primaryStage.show();
     }
 
