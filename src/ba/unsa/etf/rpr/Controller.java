@@ -1,10 +1,7 @@
 package ba.unsa.etf.rpr;
 
 import javafx.event.ActionEvent;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.Menu;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import net.sf.jasperreports.engine.JRException;
 
 
@@ -55,5 +52,10 @@ public class Controller {
     }
 
     public void jezik(ActionEvent actionEvent) {
+        String izaberi="";
+        if(((MenuItem) actionEvent.getTarget()).getId()=="bosanski")izaberi="Translation_bs";
+        if(((MenuItem) actionEvent.getTarget()).getId()=="francuski")izaberi="Translation_fr";
+        if(((MenuItem) actionEvent.getTarget()).getId()=="njemacki")izaberi="Translation_de";
+        if(((MenuItem) actionEvent.getTarget()).getId()=="engleski")izaberi="Translation_en_US";
     }
 }
