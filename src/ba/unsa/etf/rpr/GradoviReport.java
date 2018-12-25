@@ -20,8 +20,7 @@ import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.swing.JRViewer;
 
-public class PrintReport extends JFrame {
-
+public class GradoviReport extends JFrame {
     /**
      *
      */
